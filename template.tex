@@ -1,17 +1,21 @@
 \documentclass{beamer}
 
+%necessary packages
+%
 \usepackage{pgf,pgfpages}
 \usepackage{graphicx}
 \usepackage{units}
 \usepackage[utf8]{inputenc}
-%
+
 \usepackage{ifxetex}
 \ifxetex
    \usepackage{fontspec}
 \else
-   \usepackage[T1]{fontenc}
+   \usepackage[T1]{fontenc} 
 \fi
-\usepackage{amsmath, amsthm}
+%% end of necessary packages
+
+\usepackage{amsmath, amsthm} %some useful macros for math fonts and environments. Optional
 
 
 \mode<presentation>
@@ -20,21 +24,19 @@
   \setbeamercovered{transparent}
 }
 
-\usefonttheme[onlymath]{serif}
-\setbeamerfont{frametitle}{size=\Large,series=\bfseries
-}
+\usefonttheme[onlymath]{serif} %optional
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries} %setting the font for frametitles
 
 
-\beamertemplatenavigationsymbolsempty
-
-
+\beamertemplatenavigationsymbolsempty %no navigation symbols - anyway, nobody uses them. If need this feature, comment/delete this line
 
 
 
 
 
-\title{Experimental tweaking - this will be a very long title to illustrate what
-happens when we wrap text}
+
+
+\title{Title of the talk}
 \author{TZ}
 \institute{CMLS, l'X
 }
@@ -42,35 +44,32 @@ happens when we wrap text}
 
 
 \begin{document}
-
+%-----------------------------------------------------------------------
+% setting the layout for titlepage
+%
 \setbeamertemplate{footline}[default]
-
-
 \setbeamertemplate{background}{%
   \vbox to \paperheight{\vfil\hbox to
-\paperwidth{\hfil\includegraphics[width=\paperwidth]{gimp/frontpage-bgp.pdf}
+\paperwidth{\hfil\includegraphics[width=\paperwidth]{images/frontpage-bgp.pdf}
 \hfil}}
 }
-
+%-----------------------------------------------------------------------
 \begin{frame}
   \titlepage
   \vspace{50pt}
 \end{frame}
 
-%
+%------------------------------------------------------------------------
 % Set the background for the rest of the slides.
 % Insert infoline at the end
 %
 \setbeamertemplate{background}{
 \vbox to \paperheight{
 \hbox to
-\paperwidth{\hfill\includegraphics[width=\paperwidth]{gimp/slide-bgp.pdf}
+\paperwidth{\hfill\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}
 \hfil}\vfill}}
 \setbeamertemplate{footline}[CMLStheme]
-
-%--------------------------------------------------------------------
-%                          Introduction
-%--------------------------------------------------------------------
+%-------------------------------------------------------------------------
 {\setbeamertemplate{footline}{}
 \begin{frame}
 \frametitle{Table of Contents}
@@ -150,8 +149,8 @@ This block serves to give examples
 \end{frame}
 
 \subsection{Some tweaks with design}
-{\setbeamertemplate{background}{}
-\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{Xblue}\insertframetitle}
+{\setbeamertemplate{background}{} %no background
+\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{Xblue}\insertframetitle} %new colors for the frametitle
 \begin{frame}
 \frametitle{Frame without background image}
 
@@ -160,15 +159,15 @@ Only infolines are visible.
 \end{frame}
 }
 
-{\setbeamertemplate{footline}{}
+{\setbeamertemplate{footline}{}% no footer
 \begin{frame}
 \frametitle{And here we don't have infolines}
 \end{frame}
 }
 
-{\setbeamertemplate{background}{}
-\setbeamertemplate{footline}{}
-\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{Xblue}\insertframetitle}
+{\setbeamertemplate{background}{}%no background
+\setbeamertemplate{footline}{}%no footer
+\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{Xblue}\insertframetitle}%new colors for the frametitle
 \begin{frame}
 \frametitle{Pure white frame}
 
