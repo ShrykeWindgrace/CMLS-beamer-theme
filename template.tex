@@ -1,0 +1,188 @@
+\documentclass{beamer}
+
+\usepackage{pgf,pgfpages}
+\usepackage{graphicx}
+\usepackage{units}
+\usepackage[utf8]{inputenc}
+%
+\usepackage{ifxetex}
+\ifxetex
+   \usepackage{fontspec}
+\else
+   \usepackage[T1]{fontenc}
+\fi
+\usepackage{amsmath, amsthm}
+
+%\geometry{paperwidth=445mm,paperheight=278mm}
+\mode<presentation>
+{
+  \usetheme{ift}
+  \setbeamercovered{transparent}
+  %\setbeamertemplate{items}[square]
+}
+
+\usefonttheme[onlymath]{serif}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries
+}
+
+\definecolor{uibred}{RGB}{170, 0, 0}
+\definecolor{uibblue}{RGB}{0, 84, 115}
+\definecolor{uibgreen}{RGB}{119, 175, 0}
+%\definecolor{uibgreen}{RGB}{50, 105, 0}
+\definecolor{uiborange}{RGB}{217, 89, 0}
+
+
+\beamertemplatenavigationsymbolsempty
+
+
+%\include{macros}
+
+%\includeonlyframes{current}
+
+
+%\defbeamertemplate{enumerate item}{mycircle}
+%{
+%  %\usebeamerfont*{item projected}%
+%  %\usebeamercolor[bg]{item projected}%
+%  \begin{pgfpicture}{0ex}{0ex}{1.5ex}{0ex}
+%	%\pgfcircle[fill]{\pgfpoint{0pt}{.75ex}}{1.25ex}
+%    \pgfbox[center,base]{\color{%uibblue
+%    lbluegreen}\insertenumlabel.}
+%  \end{pgfpicture}%
+%}
+%[action]
+%{\setbeamerfont{item projected}{size=\scriptsize}}
+%\setbeamertemplate{enumerate item}[mycircle]
+
+
+
+
+\title{Experimental tweaking - this will be a very long title to illustrate what
+happens when we wrap text}
+\author{TZ}
+\institute{CMLS, l'X
+}
+\date{\today}
+
+
+\begin{document}
+
+
+%\setbeamertemplate{background}
+%{\begin{figure}[p]\includegraphics[width=\paperwidth%,height=\paperheight
+%]{frontpage_bgp2}
+%\end{figure}}
+\setbeamertemplate{footline}[default]
+
+%\usebackgroundtemplate
+\setbeamertemplate{background}{%
+  \vbox to \paperheight{\vfil\hbox to
+\paperwidth{\hfil\includegraphics[width=\paperwidth]{gimp/frontpage-bgp.pdf}
+\hfil}}
+}
+
+\begin{frame}
+  \titlepage
+  \vspace{50pt}
+\end{frame}
+
+%
+% Set the background for the rest of the slides.
+% Insert infoline at the end
+%
+\setbeamertemplate{background}{
+\vbox to \paperheight{
+\hbox to
+\paperwidth{\hfill\includegraphics[width=\paperwidth]{gimp/slide-bgp.pdf}
+\hfil}\vfill}}
+\setbeamertemplate{footline}[ifttheme]
+
+%--------------------------------------------------------------------
+%                          Introduction
+%--------------------------------------------------------------------
+
+\section{Introduction}
+
+%\begin{frame}
+%	\frametitle{The Title}
+%	\begin{itemize}
+%		\item PyProp 
+%		\item Python 
+%		\item Framework 
+%		\item Propagating 
+%		\item Time Dependent Schrödinger Equation 
+%	\end{itemize}
+%	
+%\end{frame}
+
+
+%--------------------------------------------------------------------
+%                          Outline
+%--------------------------------------------------------------------
+
+\subsection{Motivation}
+
+\begin{frame}
+	\frametitle{Underlying Goal}
+	
+	\begin{center}
+		%\Large
+		 Study the behaviour of atoms and molecules
+		 \[\partial_t f+\omega\cdot\nabla_x f =0\]
+	\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{enumerate}
+\begin{enumerate}
+\item un \textbf{BF}
+\item deux
+\begin{enumerate}
+\item deux-un
+\item deux - \textit{deux}
+\end{enumerate}
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{itemize}
+\begin{itemize}
+\item un \textbf{BF}
+\item deux
+\begin{itemize}
+\item deux-un
+\item deux - \textit{deux}
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{theorem}
+\begin{theorem}
+A very important theorem.
+\end{theorem}
+\begin{proof}
+An easy proof.
+\end{proof}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{blocks and text}
+\begin{block}{Block title}
+This is just a block of text
+\end{block}
+
+\begin{alertblock}{Alert-block title}
+This is a block in alerted colors
+\end{alertblock}
+
+\begin{exampleblock}{Example-block title}
+This block serves to give examples
+\end{exampleblock}
+\end{frame}
+\end{document}
+
