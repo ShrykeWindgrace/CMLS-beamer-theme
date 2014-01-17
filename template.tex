@@ -13,46 +13,22 @@
 \fi
 \usepackage{amsmath, amsthm}
 
-%\geometry{paperwidth=445mm,paperheight=278mm}
+
 \mode<presentation>
 {
-  \usetheme{ift}
+  \usetheme{CMLS}
   \setbeamercovered{transparent}
-  %\setbeamertemplate{items}[square]
 }
 
 \usefonttheme[onlymath]{serif}
 \setbeamerfont{frametitle}{size=\Large,series=\bfseries
 }
 
-\definecolor{uibred}{RGB}{170, 0, 0}
-\definecolor{uibblue}{RGB}{0, 84, 115}
-\definecolor{uibgreen}{RGB}{119, 175, 0}
-%\definecolor{uibgreen}{RGB}{50, 105, 0}
-\definecolor{uiborange}{RGB}{217, 89, 0}
-
 
 \beamertemplatenavigationsymbolsempty
 
 
-%\include{macros}
 
-%\includeonlyframes{current}
-
-
-%\defbeamertemplate{enumerate item}{mycircle}
-%{
-%  %\usebeamerfont*{item projected}%
-%  %\usebeamercolor[bg]{item projected}%
-%  \begin{pgfpicture}{0ex}{0ex}{1.5ex}{0ex}
-%	%\pgfcircle[fill]{\pgfpoint{0pt}{.75ex}}{1.25ex}
-%    \pgfbox[center,base]{\color{%uibblue
-%    lbluegreen}\insertenumlabel.}
-%  \end{pgfpicture}%
-%}
-%[action]
-%{\setbeamerfont{item projected}{size=\scriptsize}}
-%\setbeamertemplate{enumerate item}[mycircle]
 
 
 
@@ -67,14 +43,9 @@ happens when we wrap text}
 
 \begin{document}
 
-
-%\setbeamertemplate{background}
-%{\begin{figure}[p]\includegraphics[width=\paperwidth%,height=\paperheight
-%]{frontpage_bgp2}
-%\end{figure}}
 \setbeamertemplate{footline}[default]
 
-%\usebackgroundtemplate
+
 \setbeamertemplate{background}{%
   \vbox to \paperheight{\vfil\hbox to
 \paperwidth{\hfil\includegraphics[width=\paperwidth]{gimp/frontpage-bgp.pdf}
@@ -95,72 +66,69 @@ happens when we wrap text}
 \hbox to
 \paperwidth{\hfill\includegraphics[width=\paperwidth]{gimp/slide-bgp.pdf}
 \hfil}\vfill}}
-\setbeamertemplate{footline}[ifttheme]
+\setbeamertemplate{footline}[CMLStheme]
 
 %--------------------------------------------------------------------
 %                          Introduction
 %--------------------------------------------------------------------
 
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
 \section{Introduction}
 
-%\begin{frame}
-%	\frametitle{The Title}
-%	\begin{itemize}
-%		\item PyProp 
-%		\item Python 
-%		\item Framework 
-%		\item Propagating 
-%		\item Time Dependent Schrödinger Equation 
-%	\end{itemize}
-%	
-%\end{frame}
+\begin{frame}
+	\frametitle{Basics}
+Basic functionality of beamer
+	
+\end{frame}
 
 
 %--------------------------------------------------------------------
 %                          Outline
 %--------------------------------------------------------------------
 
-\subsection{Motivation}
+\subsection{Basic functions}
 
 \begin{frame}
-	\frametitle{Underlying Goal}
-	
+	\frametitle{Formulas}
+	Transport equation
+
 	\begin{center}
-		%\Large
-		 Study the behaviour of atoms and molecules
 		 \[\partial_t f+\omega\cdot\nabla_x f =0\]
 	\end{center}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{enumerate}
+\frametitle{Using enumerate}
 \begin{enumerate}
-\item un \textbf{BF}
-\item deux
+\item Lorem 
+\item Ipsum
 \begin{enumerate}
-\item deux-un
-\item deux - \textit{deux}
+\item Ipsum-lorem
+\item Ipsum-ipsum
 \end{enumerate}
 \end{enumerate}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{itemize}
+\frametitle{Using itemize}
 \begin{itemize}
-\item un \textbf{BF}
-\item deux
+\item Lorem 
+\item Ipsum
 \begin{itemize}
-\item deux-un
-\item deux - \textit{deux}
+\item Ipsum-lorem
+\item Ipsum-ipsum
 \end{itemize}
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}
-\frametitle{theorem}
+\frametitle{Theorems}
 \begin{theorem}
 A very important theorem.
 \end{theorem}
@@ -171,7 +139,7 @@ An easy proof.
 
 
 \begin{frame}
-\frametitle{blocks and text}
+\frametitle{Blocks of text}
 \begin{block}{Block title}
 This is just a block of text
 \end{block}
@@ -183,6 +151,44 @@ This is a block in alerted colors
 \begin{exampleblock}{Example-block title}
 This block serves to give examples
 \end{exampleblock}
+\end{frame}
+
+\subsection{Some tweaks with design}
+{\setbeamertemplate{background}{}
+\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{Xblue}\insertframetitle}
+\begin{frame}
+\frametitle{Frame without background image}
+
+
+Only infolines are visible.
+\end{frame}
+}
+
+{\setbeamertemplate{footline}{}
+\begin{frame}
+\frametitle{And here we don't have infolines}
+\end{frame}
+}
+
+{\setbeamertemplate{background}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{Xblue}\insertframetitle}
+\begin{frame}
+\frametitle{Pure white frame}
+
+There's nothing here.
+
+\end{frame}
+}
+
+\section{Conclusion}
+\begin{frame}
+\frametitle{Last page}
+Thanks for reading the whole document!
+
+Feel free to send me any suggestions, remarks, commentaries, requests, etc. at \textit{{\color{Xblue}timofey.zakrevskiy@polytechnique.edu}}
+\vfill
+Cheers, TZ.
 \end{frame}
 \end{document}
 

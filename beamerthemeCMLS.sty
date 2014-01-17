@@ -1,0 +1,35 @@
+%
+% Loosely based on Boadilla by Manuel Carro
+%
+% Original:
+% Copyright 2004 by Manuel Carro <mcarro@fi.upm.es>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\usecolortheme{CMLS}
+
+\useoutertheme{CMLS}
+
+
+
+% Tills' opinion: should be done in an inner theme, not here.
+\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{white}\insertframetitle}
+
+
+
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+\ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
+
+\mode
+<all>
