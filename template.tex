@@ -1,5 +1,14 @@
-\documentclass{beamer}
-
+\RequirePackage{ifpdf}
+\RequirePackage{ifxetex}
+\ifpdf
+  \documentclass{beamer}
+\else
+  \ifxetex
+    \documentclass{beamer}
+  \else
+    \documentclass[dvipdfm]{beamer}
+  \fi
+\fi
 %necessary packages
 %
 \usepackage{pgf,pgfpages}
@@ -36,7 +45,8 @@
 
 
 
-\title{Title of the talk}
+\title{Title of the talk,
+compiled with \ifpdf pdflatex\else \ifxetex xelatex\else latex+dvipdfm\fi\fi}
 \author{TZ}
 \institute{CMLS, l'X
 }
@@ -50,7 +60,7 @@
 \setbeamertemplate{footline}[default]
 \setbeamertemplate{background}{%
   \vbox to \paperheight{\vfil\hbox to
-\paperwidth{\hfil\includegraphics[width=\paperwidth]{images/frontpage-bgp.pdf}
+\paperwidth{\hfil\includegraphics[width=\paperwidth,natwidth=1263bp,natheight=668bp]{images/frontpage-bgp.pdf}
 \hfil}}
 }
 %-----------------------------------------------------------------------
@@ -66,7 +76,7 @@
 \setbeamertemplate{background}{
 \vbox to \paperheight{
 \hbox to
-\paperwidth{\hfill\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}
+\paperwidth{\hfill\includegraphics[width=\paperwidth,natwidth=1263bp,natheight=668bp]{images/slide-bgp.pdf}
 \hfil}\vfill}}
 \setbeamertemplate{footline}[CMLStheme]
 %-------------------------------------------------------------------------
