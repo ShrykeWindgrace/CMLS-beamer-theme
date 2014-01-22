@@ -1,3 +1,14 @@
+%------------------------------------------------------------
+%these tricks allow to compile the presentation on pdflatex, xelatex and latex+dvipdfm combo.
+%However, in the last case the dvi file will be most certainly unreadable
+%if you use only one routine, then you can replace this section by:
+%
+%\documentclass{beamer}
+%for xelatex and pdflatex
+%
+%\documentclass[dvipdfm]{beamer}
+%for latex+dvipdfm
+%
 \RequirePackage{ifpdf}
 \RequirePackage{ifxetex}
 \ifpdf
@@ -9,6 +20,8 @@
     \documentclass[dvipdfm]{beamer}
   \fi
 \fi
+%-------------------------------------------------------------
+
 %necessary packages
 %
 \usepackage{pgf,pgfpages}
@@ -16,12 +29,12 @@
 \usepackage{units}
 \usepackage[utf8]{inputenc}
 
-\usepackage{ifxetex}
 \ifxetex
    \usepackage{fontspec}
 \else
    \usepackage[T1]{fontenc} 
-\fi
+\fi  %this trick allows to have good fonts under both pdflatex and xelatex
+
 %% end of necessary packages
 
 \usepackage{amsmath, amsthm} %some useful macros for math fonts and environments. Optional
@@ -37,7 +50,7 @@
 \setbeamerfont{frametitle}{size=\Large,series=\bfseries} %setting the font for frametitles
 
 
-\beamertemplatenavigationsymbolsempty %no navigation symbols - anyway, nobody uses them. If need this feature, comment/delete this line
+\beamertemplatenavigationsymbolsempty %no navigation symbols - anyway, nobody clicks them. If need this feature, comment/delete this line
 
 
 
@@ -45,8 +58,7 @@
 
 
 
-\title{Title of the talk,
-compiled with \ifpdf pdflatex\else \ifxetex xelatex\else latex+dvipdfm\fi\fi}
+\title{Title of the talk}
 \author{TZ}
 \institute{CMLS, l'X
 }
@@ -60,7 +72,9 @@ compiled with \ifpdf pdflatex\else \ifxetex xelatex\else latex+dvipdfm\fi\fi}
 \setbeamertemplate{footline}[default]
 \setbeamertemplate{background}{%
   \vbox to \paperheight{\vfil\hbox to
-\paperwidth{\hfil\includegraphics[width=\paperwidth,natwidth=1263bp,natheight=668bp]{images/frontpage-bgp.pdf}
+\paperwidth{\hfil\includegraphics[width=\paperwidth
+,natwidth=1263bp,natheight=668bp %Delete this line if you use only xelatex and/or pdflatex
+]{images/frontpage-bgp.pdf}
 \hfil}}
 }
 %-----------------------------------------------------------------------
@@ -76,7 +90,9 @@ compiled with \ifpdf pdflatex\else \ifxetex xelatex\else latex+dvipdfm\fi\fi}
 \setbeamertemplate{background}{
 \vbox to \paperheight{
 \hbox to
-\paperwidth{\hfill\includegraphics[width=\paperwidth,natwidth=1263bp,natheight=668bp]{images/slide-bgp.pdf}
+\paperwidth{\hfill\includegraphics[width=\paperwidth
+,natwidth=1263bp,natheight=668bp %Delete this line if you use only xelatex and/or pdflatex
+]{images/slide-bgp.pdf}
 \hfil}\vfill}}
 \setbeamertemplate{footline}[CMLStheme]
 %-------------------------------------------------------------------------
@@ -190,7 +206,7 @@ There's nothing here.
 \subsection{One more slide}
 \begin{frame}
 \frametitle{Last page}
-Thanks for reading the whole document!
+Thank you for reading the whole document!
 
 Feel free to send me any suggestions, remarks, commentaries, requests, etc. at \textit{{\color{Xblue}timofey.zakrevskiy@polytechnique.edu}}
 \vfill
