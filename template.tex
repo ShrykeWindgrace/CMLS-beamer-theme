@@ -35,6 +35,8 @@
    \usepackage[T1]{fontenc} 
 \fi  %this trick allows to have good fonts under both pdflatex and xelatex
 
+\newcommand{\donothing}{}
+
 %% end of necessary packages
 
 \usepackage{amsmath, amsthm} %some useful macros for math fonts and environments. Optional
@@ -72,9 +74,11 @@
 \setbeamertemplate{footline}[default]
 \setbeamertemplate{background}{%
   \vbox to \paperheight{\vfil\hbox to
-\paperwidth{\hfil\includegraphics[width=\paperwidth
-,natwidth=1263bp,natheight=668bp %Delete this line if you use only xelatex and/or pdflatex
-]{images/frontpage-bgp.pdf}
+\paperwidth{\hfil\ifpdf\includegraphics[width=\paperwidth]{images/frontpage-bgp.pdf}
+\else\ifxetex\includegraphics[width=\paperwidth]{images/frontpage-bgp.pdf}\else
+\includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]{images/frontpage-bgp.pdf}
+  \fi
+\fi
 \hfil}}
 }
 %-----------------------------------------------------------------------
@@ -87,12 +91,10 @@
 % Set the background for the rest of the slides.
 % Insert infoline at the end
 %
-\setbeamertemplate{background}{
-\vbox to \paperheight{
-\hbox to
-\paperwidth{\hfill\includegraphics[width=\paperwidth
-,natwidth=1263bp,natheight=668bp %Delete this line if you use only xelatex and/or pdflatex
-]{images/slide-bgp.pdf}
+\setbeamertemplate{background}{\vbox to \paperheight{\hbox to\paperwidth{\hfill\ifpdf\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}
+\else\ifxetex\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}\else
+\includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]%
+{images/slide-bgp.pdf}\fi\fi
 \hfil}\vfill}}
 \setbeamertemplate{footline}[CMLStheme]
 %-------------------------------------------------------------------------
