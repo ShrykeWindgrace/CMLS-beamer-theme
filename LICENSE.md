@@ -1,1 +1,1 @@
-IIRC, this should be a LPPL.
+This work is distributed under GNU GPLv3.
