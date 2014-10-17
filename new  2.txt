@@ -1,0 +1,21 @@
+﻿slide_bg ={width = 1186px, height =889px, png, meaningful height = 122px}
+
+frontpage_bg = {1022 768, useful 334 with black band of 5?px}
+
+Tot vopros na stackexchange
+
+razlozhenie po parametru dlya proektornoj zadachi
+
+H: 202 grad
+S: 83 %
+B: 23%
+
+R: 10
+G: 41
+B: 59
+
+Basic light: (0A293B)(10,41,59)->(3B799D)(59,121,157)->(55829D)(85,130,157) Мы использовали немного другую схему
+
+Complementary (5D380B)(453118)(3C2304)(AE7A3B)(AE885A)
+
+We need to do something with papillon Logo and with Ecole Logo. Moreover, the distortions of the background image is quite lame, need to do something with papersize in pixels.
