@@ -32,3 +32,5 @@
 *.tdo
 fonts.tex
 figurer/*.*
+
+*.sublime*
