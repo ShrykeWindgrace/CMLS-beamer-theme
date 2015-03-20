@@ -7,6 +7,8 @@
 % This program can be redistributed and/or modified under the terms
 % of the GNU Public License, version 3.
 
+%user-controlled content
+
 \mode<presentation>
 
 \newif\ifbeamer@secheader
@@ -22,7 +24,17 @@
 
 
 % Tills' opinion: should be done in an inner theme, not here.
-\setbeamertemplate{frametitle}{\vspace{0.25cm}\color{white}\insertframetitle}
+\setbeamertemplate{frametitle}{%\vspace{-0.06cm}
+\color{white}\insertframetitle\hfill%
+\raisebox{-0.27cm}{\includegraphics[height=9.2mm]{images/LogoCMLSTZ2.png}}%
+}
+
+% \setbeamertemplate{background}{%
+% % \vspace*{-10mm}%
+% \includegraphics[clip, trim = 0mm  99mm 0mm 29mm, width=\paperwidth]{images/arr-plan-web.jpg}%
+% }%
+
+\setbeamertemplate{footline}[CMLStheme]
 
 \setbeamersize{text margin left=1em,text margin right=1em}
 
