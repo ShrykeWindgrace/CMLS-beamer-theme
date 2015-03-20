@@ -1,0 +1,51 @@
+% \setcounter{tocdepth}{1}
+\newcommand{\frametoc}{
+	{
+		\setbeamertemplate{footline}{}
+		\begin{frame}
+			\frametitle{Table of Contents}
+			\tableofcontents[hideallsubsections]
+		\end{frame}
+	}
+}
+
+
+\makeatletter
+\newbox\@backgroundblock
+\newenvironment{backgroundblock}[2]{%
+  \global\setbox\@backgroundblock=\vbox\bgroup%
+    \unvbox\@backgroundblock%
+    \vbox to0pt\bgroup\vskip#2\hbox to0pt\bgroup\hskip#1\relax%
+}{\egroup\egroup\egroup}
+\addtobeamertemplate{background}{\box\@backgroundblock}{}
+\makeatother
+
+\newcommand{\frametitlepage}
+{%-----------------------------------------------------------------------
+% setting the layout for titlepage
+%
+{%
+\setbeamertemplate{footline}[default]%
+\setbeamertemplate{background}{%
+  \vbox to \paperheight{\vfil\hbox to
+\paperwidth{\hfil\ifpdf\includegraphics[clip, trim =  0mm 0mm  0mm 75mm,width=\paperwidth]{images/arr-plan-web.jpg}
+\else\ifxetex\centering\includegraphics[clip, trim =  0mm 0mm  0mm 75mm,width=\paperwidth]{images/arr-plan-web.jpg}\else
+\includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]{images/frontpage-bgp.pdf}
+  \fi
+\fi
+\hfil}}
+}
+%-----------------------------------------------------------------------
+% \usebackgroundtemplate{}%
+\begin{frame}
+  \titlepage
+  % \vspace{50pt}
+  % \begin{backgroundblock}{10mm}{10mm}
+	\includegraphics[width=45mm]{images/logo-ecole-polytechnique-right.png}%
+	% \includegraphics[width=45mm]{images/LEPHB.eps}%
+	\hfill\includegraphics[width=45mm]{images/lablogoalpha.png}
+  % \end{backgroundblock}
+\end{frame}
+}
+}
+
