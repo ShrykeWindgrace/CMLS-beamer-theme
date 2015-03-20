@@ -1,24 +1,12 @@
-% \setcounter{tocdepth}{1}
 \newcommand{\frametoc}{
 	{
-		\setbeamertemplate{footline}{}
+		\setbeamertemplate{footline}{}%remove footline
 		\begin{frame}
 			\frametitle{Table of Contents}
-			\tableofcontents[hideallsubsections]
+			\tableofcontents[hideallsubsections]%only sections are visibe; change if needed
 		\end{frame}
 	}
 }
-
-
-\makeatletter
-\newbox\@backgroundblock
-\newenvironment{backgroundblock}[2]{%
-  \global\setbox\@backgroundblock=\vbox\bgroup%
-    \unvbox\@backgroundblock%
-    \vbox to0pt\bgroup\vskip#2\hbox to0pt\bgroup\hskip#1\relax%
-}{\egroup\egroup\egroup}
-\addtobeamertemplate{background}{\box\@backgroundblock}{}
-\makeatother
 
 \newcommand{\frametitlepage}
 {%-----------------------------------------------------------------------
@@ -30,22 +18,18 @@
   \vbox to \paperheight{\vfil\hbox to
 \paperwidth{\hfil\ifpdf\includegraphics[clip, trim =  0mm 0mm  0mm 75mm,width=\paperwidth]{images/arr-plan-web.jpg}
 \else\ifxetex\centering\includegraphics[clip, trim =  0mm 0mm  0mm 75mm,width=\paperwidth]{images/arr-plan-web.jpg}\else
-\includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]{images/frontpage-bgp.pdf}
+\includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]{images/frontpage-bgp.pdf}%only needed if you use latex+dvipdf combo, which is strange in the first place; this option is relatively untested, use with discretion
   \fi
 \fi
 \hfil}}
 }
-%-----------------------------------------------------------------------
-% \usebackgroundtemplate{}%
+%-----------------------------------------------------------------------%
 \begin{frame}
-  \titlepage
-  % \vspace{50pt}
-  % \begin{backgroundblock}{10mm}{10mm}
-	\includegraphics[width=45mm]{images/logo-ecole-polytechnique-right.png}%
-	% \includegraphics[width=45mm]{images/LEPHB.eps}%
-	\hfill\includegraphics[width=45mm]{images/lablogoalpha.png}
+  \titlepage %title/author(s),date, etc
+  % \vspace{50pt}% uncomment this if need to play with the positioning of the text
+	\includegraphics[width=45mm]{images/logo-ecole-polytechnique-right.png}% We use the converted png file instead of eps file provided by Ecole, because the eps file breaks the compilation; possible reason - some strange editing software used by Ecole. 
+	\hfill\includegraphics[width=45mm]{images/lablogoalpha.png}% Logo of the lab as png with alpha-channel. Feel free to use your own image
   % \end{backgroundblock}
-\end{frame}
-}
-}
-
+\end{frame}%
+}%
+}%
