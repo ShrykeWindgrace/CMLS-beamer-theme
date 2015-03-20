@@ -56,9 +56,7 @@
 \beamertemplatenavigationsymbolsempty %no navigation symbols - anyway, nobody clicks them. If need this feature, comment/delete this line
 
 
-
-
-
+\input{framemacros.tex}
 
 
 \title{Title of the talk}
@@ -69,42 +67,26 @@
 
 
 \begin{document}
-%-----------------------------------------------------------------------
-% setting the layout for titlepage
-%
-\setbeamertemplate{footline}[default]
-\setbeamertemplate{background}{%
-  \vbox to \paperheight{\vfil\hbox to
-\paperwidth{\hfil\ifpdf\includegraphics[width=\paperwidth]{images/frontpage-bgp.pdf}
-\else\ifxetex\includegraphics[width=\paperwidth]{images/frontpage-bgp.pdf}\else
-\includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]{images/frontpage-bgp.pdf}
-  \fi
-\fi
-\hfil}}
-}
-%-----------------------------------------------------------------------
-\begin{frame}
-  \titlepage
-  \vspace{50pt}
-\end{frame}
 
+\frametitlepage
 %------------------------------------------------------------------------
 % Set the background for the rest of the slides.
 % Insert infoline at the end
-%
-\setbeamertemplate{background}{\vbox to \paperheight{\hbox to\paperwidth{\hfill\ifpdf\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}
-\else\ifxetex\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}\else
-\includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]%
-{images/slide-bgp.pdf}\fi\fi
-\hfil}\vfill}}
-\setbeamertemplate{footline}[CMLStheme]
+% %
+% \setbeamertemplate{background}{\vbox to \paperheight{\hbox to\paperwidth{\hfill\ifpdf\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}
+% \else\ifxetex\includegraphics[width=\paperwidth]{images/slide-bgp.pdf}\else
+% \includegraphics[width=\paperwidth,natwidth=1261bp,natheight=668bp]%
+% {images/slide-bgp.pdf}\fi\fi
+% \hfil}\vfill}}
+% \setbeamertemplate{footline}[CMLStheme]
 %-------------------------------------------------------------------------
-{\setbeamertemplate{footline}{}
-\begin{frame}
-\frametitle{Table of Contents}
-\tableofcontents
-\end{frame}
-}
+% {\setbeamertemplate{footline}{}
+% \begin{frame}
+% \frametitle{Table of Contents}
+% \tableofcontents
+% \end{frame}
+% }
+\frametoc
 \section{Introduction}
 \subsection{Basics}
 \begin{frame}
