@@ -34,3 +34,4 @@ fonts.tex
 figurer/*.*
 
 *.sublime*
+*.fls
